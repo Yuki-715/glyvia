@@ -1,0 +1,157 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Glyvia 正在研发柔性口内传感器，探索用唾液测量葡萄糖。" data-en-content="Glyvia is developing a flexible oral wearable to sense glucose in saliva.">
+  <meta name="theme-color" content="#fff8f4">
+  <title data-en="Glyvia | Saliva glucose sensing">Glyvia｜唾液葡萄糖传感</title>
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='8' fill='%23a22540'/%3E%3Cpath d='M16 5c-3 5-8 9-8 14a8 8 0 0 0 16 0c0-5-5-9-8-14Z' fill='none' stroke='%23fff8f4' stroke-width='2'/%3E%3C/svg%3E">
+  <link rel="stylesheet" href="style.css">
+  <script src="site.js" defer></script>
+</head>
+<body>
+  <svg class="symbols" aria-hidden="true" xmlns="http://www.w3.org/2000/svg">
+    <symbol id="drop" viewBox="0 0 48 48"><path d="M24 5C20 12 11 20 11 29a13 13 0 0 0 26 0c0-9-9-17-13-24Z"/><path d="M17 30a7 7 0 0 0 6 6"/></symbol>
+    <symbol id="chip" viewBox="0 0 48 48"><rect x="10" y="10" width="28" height="28" rx="6"/><rect x="18" y="18" width="12" height="12" rx="2"/><path d="M18 4v6m12-6v6M18 38v6m12-6v6m8-26h6m-6 12h6M4 18h6M4 30h6"/></symbol>
+    <symbol id="signal" viewBox="0 0 48 48"><rect x="5" y="8" width="38" height="30" rx="6"/><path d="M10 24h8l4-8 6 15 4-7h6M19 43h10"/></symbol>
+    <symbol id="retainer" viewBox="0 0 48 48"><path d="M8 38c-4-5-4-11-2-18A19 19 0 0 1 24 7a19 19 0 0 1 18 13c2 7 2 13-2 18-2 3-6 1-6-2l1-7c1-7-4-13-11-13S12 22 13 29l1 7c0 3-4 5-6 2Z"/><path d="m8 17 6 3m7-12 1 8m10-7-2 8m9 1-5 3M6 29l7-1m22 0 7 1"/></symbol>
+    <symbol id="globe" viewBox="0 0 48 48"><circle cx="24" cy="24" r="18"/><ellipse cx="24" cy="24" rx="8" ry="18"/><path d="M6 24h36M10 14h28M10 34h28"/></symbol>
+    <symbol id="pin" viewBox="0 0 48 48"><path d="M24 43S10 29 10 19a14 14 0 1 1 28 0c0 10-14 24-14 24Z"/><circle cx="24" cy="19" r="5"/></symbol>
+    <symbol id="people" viewBox="0 0 48 48"><circle cx="18" cy="15" r="6"/><path d="M6 39v-4a8 8 0 0 1 8-8h8a8 8 0 0 1 8 8v4m1-29a6 6 0 0 1 0 12m4 6a8 8 0 0 1 7 8v3"/></symbol>
+    <symbol id="meter" viewBox="0 0 48 48"><rect x="13" y="5" width="22" height="34" rx="6"/><rect x="18" y="10" width="12" height="10" rx="2"/><circle cx="24" cy="28" r="2"/><path d="M22 39v5h4v-5"/></symbol>
+    <symbol id="patch" viewBox="0 0 48 48"><rect x="6" y="12" width="36" height="24" rx="11" transform="rotate(-24 24 24)"/><circle cx="24" cy="24" r="5"/><path d="M24 22v4m-2-2h4"/></symbol>
+    <symbol id="flask" viewBox="0 0 48 48"><path d="M18 5h12m-9 1v15L9 38a3 3 0 0 0 2 5h26a3 3 0 0 0 2-5L27 21V6M16 29h16"/><path d="M19 36h.1m10 2h.1"/></symbol>
+    <symbol id="heart" viewBox="0 0 48 48"><path d="M24 39 7 22c-5-5-2-14 5-15 5-1 9 2 12 6 3-4 7-7 12-6 7 1 10 10 5 15L24 39Z"/><path d="M10 24h8l3-6 5 12 4-6h8"/></symbol>
+    <symbol id="layers" viewBox="0 0 48 48"><path d="m24 6 18 10-18 10L6 16 24 6Zm18 18L24 34 6 24m36 8L24 42 6 32"/></symbol>
+    <symbol id="menu" viewBox="0 0 48 48"><path d="M8 13h32M8 24h32M8 35h32"/></symbol>
+    <symbol id="external" viewBox="0 0 48 48"><path d="M26 8h14v14m0-14L22 26m2-16H10a2 2 0 0 0-2 2v26a2 2 0 0 0 2 2h26a2 2 0 0 0 2-2V24"/></symbol>
+  </svg>
+  <a class="skip" href="#main" data-en="Skip to content">跳到主要内容</a>
+  <header class="site-header">
+    <div class="wrap header-inner">
+      <a href="#top" class="brand" aria-label="Glyvia 首页" data-en-label="Glyvia home"><span class="brand-mark"><svg class="icon" aria-hidden="true"><use href="#drop"/></svg></span><span><strong data-en="Glyvia">Glyvia</strong><small data-en="CONRAD CHALLENGE">SALIVA SENSING</small></span></a>
+      <nav id="site-nav" aria-label="主导航" data-en-label="Main navigation">
+        <a href="#product" data-en="Product">产品</a><a href="#science" data-en="How it works">工作原理</a><a href="#evidence" data-en="Research">研究数据</a><a href="#impact" data-en="Our story">品牌故事</a>
+      </nav>
+      <div class="header-controls">
+        <div class="language" role="group" aria-label="切换语言" data-en-label="Language" hidden>
+          <button type="button" data-language="zh-CN" lang="zh-CN" aria-label="简体中文" aria-pressed="true">中文</button>
+          <button type="button" data-language="en" lang="en" aria-label="English" aria-pressed="false">EN</button>
+        </div>
+        <button type="button" class="menu-toggle" data-menu-toggle aria-controls="site-nav" aria-expanded="false" aria-label="导航" data-en-label="Menu" hidden><svg class="icon" aria-hidden="true"><use href="#menu"/></svg></button>
+      </div>
+    </div>
+  </header>
+  <main id="main">
+    <section class="opening" id="top" aria-labelledby="hero-title">
+      <div class="wrap hero">
+        <div class="hero-copy">
+          <h1 id="hero-title"><span data-en="It starts with">从一滴</span><span data-en="a drop of saliva.">唾液开始。</span></h1>
+          <p data-en="We’re developing an oral wearable with a flexible sensor that reads glucose signals in saliva. No fingerstick needed to collect a saliva sample.">Glyvia 是一款研发中的口内传感器。柔性芯片读取唾液里的葡萄糖信号，采样无需刺指。</p>
+          <div class="hero-actions"><a class="button primary" href="#product" data-en="Explore the device">认识产品</a><a class="button secondary" href="#evidence" data-en="See the research">查看研究数据</a></div>
+        </div>
+        <figure class="hero-visual">
+          <img src="assets/oral-sensor.jpg" width="1200" height="900" alt="透明口内载体上的金色薄膜传感器" data-en-alt="A gold film sensor mounted on a clear oral appliance" fetchpriority="high">
+          <figcaption data-en="Oral wearable · Concept image">口内佩戴式传感器 · 产品概念图</figcaption>
+        </figure>
+      </div>
+      <div class="wrap key-figures" aria-label="关键数据" data-en-label="Key figures">
+        <a href="#burden"><svg class="icon" aria-hidden="true"><use href="#globe"/></svg><div><strong class="number"><span data-en="589">5.89</span> <small data-en="million">亿</small></strong><span class="stat-label" data-en="Adults with diabetes worldwide">全球成人糖尿病人数</span><span class="stat-source" data-en="IDF · 2024 estimate, ages 20–79">IDF · 2024 年估计，20–79 岁</span></div></a>
+        <a href="#hong-kong"><svg class="icon" aria-hidden="true"><use href="#pin"/></svg><div><strong class="number"><span data-en="706,000">70.6</span><small data-en=""> 万</small></strong><span class="stat-label" data-en="Adults with diabetes in Hong Kong">香港成人糖尿病人数</span><span class="stat-source" data-en="IDF · 2024 estimate, ages 20–79">IDF · 2024 年估计，20–79 岁</span></div></a>
+        <a href="#sample"><svg class="icon" aria-hidden="true"><use href="#people"/></svg><div><strong class="number">500 <small data-en="people">人</small></strong><span class="stat-label" data-en="In PolyU’s saliva sensing research">理大唾液传感研究受试者</span><span class="stat-source" data-en="Hong Kong Polytechnic University · External research">香港理工大学 · 外部研究</span></div></a>
+      </div>
+    </section>
+
+    <section class="section wrap" id="product" aria-labelledby="product-title">
+      <header class="section-intro" id="need"><h2 id="product-title" data-en="Less friction in daily checks.">让日常检测少一点负担。</h2><p data-en="Preparing, sampling and logging add up. We’re starting with the sample itself, exploring a simpler way to test using saliva.">准备、采样、记录，每次检测都在重复。Glyvia 从采样入手，探索更自然的唾液检测方式。</p></header>
+      <div class="features">
+        <article><span class="icon-tile"><svg class="icon" aria-hidden="true"><use href="#drop"/></svg></span><h3 data-en="Needle-free sampling">免刺指采样</h3><p data-en="The sensing surface comes into contact with saliva inside the mouth.">感测面在口内直接接触唾液。</p></article>
+        <article><span class="icon-tile"><svg class="icon" aria-hidden="true"><use href="#retainer"/></svg></span><h3 data-en="Flexible oral design">柔性口内设计</h3><p data-en="A thin sensor film fits into a wearable oral appliance.">轻薄的柔性芯片装在口内佩戴器上。</p></article>
+        <article><span class="icon-tile"><svg class="icon" aria-hidden="true"><use href="#signal"/></svg></span><h3 data-en="Traceable signal readings">可追踪的信号读数</h3><p data-en="The reader is designed to log the signal, time and reading quality.">读数端设计用于记录信号、时间与读数质量。</p></article>
+      </div>
+    </section>
+
+    <section class="section science-band" id="science" aria-labelledby="science-title">
+      <div class="wrap science-grid">
+        <figure class="science-visual"><img src="assets/sensor-layers.jpg" width="1200" height="900" alt="唾液液滴、感测薄膜和薄膜电极的分层概念图" data-en-alt="Concept illustration of a saliva droplet, sensing film and thin-film electrodes" loading="lazy"><figcaption data-en="OECT sensor · Concept illustration">OECT 感测元件 · 结构示意</figcaption></figure>
+        <div class="science-copy"><p class="section-label" data-en="Organic electrochemical transistor">有机电化学晶体管</p><h2 id="science-title" data-en="A flexible chip reads glucose signals in saliva.">一枚柔性芯片，读出唾液里的葡萄糖信号。</h2>
+          <ol class="steps">
+            <li><svg class="icon" aria-hidden="true"><use href="#drop"/></svg><div><h3 data-en="Saliva reaches the sensing layer">唾液接触感测层</h3><p data-en="The oral appliance holds the flexible sensing surface in place.">口内载体将柔性感测面固定在采样位置。</p></div></li>
+            <li><svg class="icon" aria-hidden="true"><use href="#chip"/></svg><div><h3 data-en="The chip turns the reaction into current">芯片把反应转成电流</h3><p data-en="A glucose-related reaction changes the gate signal. The OECT converts it into a measurable current.">葡萄糖相关反应改变栅极信号，OECT 将它转换成可测电流。</p></div></li>
+            <li><svg class="icon" aria-hidden="true"><use href="#signal"/></svg><div><h3 data-en="The reader logs the signal">读数端记录信号</h3><p data-en="Time-stamped readings let researchers track how the saliva signal changes.">带时间戳的读数帮助研究人员观察唾液信号的变化。</p></div></li>
+          </ol>
+          <a class="source-link" href="https://patents.justia.com/patent/20260272335"><span data-en="Technology reference · US20260272335A1">技术参考 · US20260272335A1</span><svg class="icon" aria-hidden="true"><use href="#external"/></svg></a>
+        </div>
+      </div>
+    </section>
+
+    <section class="section evidence-band" id="evidence" aria-labelledby="evidence-title">
+      <div class="wrap">
+        <header class="section-intro"><h2 id="evidence-title" data-en="What can glucose in saliva tell us?">唾液里的葡萄糖，能告诉我们什么？</h2><p data-en="Public data show the scale of diabetes and why timing matters in saliva sensing.">从糖尿病的全球数据，到唾液传感研究里值得关注的时间差。</p></header>
+        <div class="charts">
+          <figure class="chart" id="burden">
+            <div class="chart-heading"><svg class="icon" aria-hidden="true"><use href="#globe"/></svg><div><h3 data-en="Diabetes worldwide">全球糖尿病人数</h3><p data-en="Adults aged 20–79">20–79 岁成人</p></div></div>
+            <div class="bar-chart" aria-label="2024 年估计 5.89 亿，2050 年预测 8.53 亿。" data-en-label="2024 estimate: 589 million. 2050 projection: 853 million." role="img">
+              <div class="bar-plot"><div class="chart-grid" aria-hidden="true"></div><div class="bar-series" aria-hidden="true">
+                <div class="bar-column" style="--height:65.444%"><span class="bar-number number" data-en="589M">5.89 亿</span><div class="bar current"></div></div>
+                <div class="bar-column" style="--height:94.778%"><span class="bar-number number" data-en="853M">8.53 亿</span><div class="bar projected"></div></div>
+              </div></div>
+              <div class="bar-labels" aria-hidden="true"><span data-en="2024 estimate">2024 年估计</span><span data-en="2050 projection">2050 年预测</span></div>
+            </div>
+            <figcaption><a class="source-link" href="https://diabetesatlas.org/Data-by-Location/Global/"><span data-en="Source: IDF Diabetes Atlas, 11th edition">来源：IDF《糖尿病地图集》第 11 版</span><svg class="icon" aria-hidden="true"><use href="#external"/></svg></a></figcaption>
+          </figure>
+          <figure class="chart" id="lag">
+            <div class="chart-heading"><svg class="icon" aria-hidden="true"><use href="#signal"/></svg><div><h3 data-en="Saliva’s response can lag behind blood">唾液与血液的葡萄糖响应有时差</h3><p data-en="Reported examples from a PolyU patent application">香港理大公开专利申请中的观测示例</p></div></div>
+            <div class="range-chart" aria-label="餐后约 30 至 50 分钟，含糖饮料后约 10 至 30 分钟。" data-en-label="About 30 to 50 minutes after a meal and 10 to 30 minutes after a sugary drink." role="img">
+              <div class="range-row" aria-hidden="true"><div class="range-label"><span data-en="After a meal">餐后</span><strong class="number"><span>30–50</span> <small data-en="min">分钟</small></strong></div><div class="range-track"><span style="--start:50%;--range-width:33.333%"></span></div></div>
+              <div class="range-row" aria-hidden="true"><div class="range-label"><span data-en="After a sugary drink">含糖饮料后</span><strong class="number"><span>10–30</span> <small data-en="min">分钟</small></strong></div><div class="range-track"><span style="--start:16.667%;--range-width:33.333%"></span></div></div>
+              <div class="range-scale" aria-hidden="true"><span>0</span><span>20</span><span>40</span><span data-en="60 min">60 分钟</span></div>
+            </div>
+            <figcaption><a class="source-link" href="https://patents.justia.com/patent/20260272335"><span data-en="Source: Patent application US20260272335A1">来源：公开专利申请 US20260272335A1</span><svg class="icon" aria-hidden="true"><use href="#external"/></svg></a></figcaption>
+          </figure>
+        </div>
+        <div class="research-notes">
+          <article id="sample"><svg class="icon" aria-hidden="true"><use href="#people"/></svg><div id="published"><h3><strong class="number">500</strong> <span data-en="participants">名受试者</span></h3><p data-en="PolyU reported a positive relationship between fasting saliva and blood glucose in its wearable sensing research.">香港理工大学的可穿戴唾液传感研究观察到，空腹唾液与血液中的葡萄糖呈正相关。</p><a class="source-link" href="https://www.polyu.edu.hk/kteo/knowledge-transfer/innovations-and-technologies/technology-search/award-winning/a202504_04/"><span data-en="PolyU research showcase">理大研究展示</span><svg class="icon" aria-hidden="true"><use href="#external"/></svg></a></div></article>
+          <article id="hong-kong"><svg class="icon" aria-hidden="true"><use href="#pin"/></svg><div><h3><strong class="number" data-en="706,000">70.6 万</strong> <span data-en="adults in Hong Kong">香港成年人</span></h3><p data-en="The IDF estimates that 706,000 Hong Kong adults aged 20–79 were living with diabetes in 2024.">IDF 估计，2024 年香港约有 70.6 万名 20–79 岁成人患糖尿病。</p><a class="source-link" href="https://diabetesatlas.org/media/uploads/sites/3/2025/10/IDF_Diabetes_Atlas_11th_Edition_2025_WEB.pdf#page=116"><span data-en="IDF Western Pacific data">IDF 西太平洋地区数据</span><svg class="icon" aria-hidden="true"><use href="#external"/></svg></a></div></article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section wrap" id="comparison" aria-labelledby="compare-title">
+      <header class="section-intro"><h2 id="compare-title" data-en="Three ways to look at glucose.">三种葡萄糖检测方式。</h2><p data-en="A fingerstick uses a blood sample. A CGM tracks glucose in interstitial fluid. Glyvia is exploring a third sample: saliva.">指尖血糖仪取血，连续葡萄糖监测仪测组织间液。Glyvia 探索第三种样本：唾液。</p></header>
+      <div class="comparison">
+        <article><svg class="icon" aria-hidden="true"><use href="#meter"/></svg><h3 data-en="Fingerstick meter">指尖血糖仪</h3><dl><dt data-en="Sample">检测样本</dt><dd data-en="Capillary blood">指尖毛细血管血</dd><dt data-en="Reading">读数方式</dt><dd data-en="One reading per sample">每次采血得到一次读数</dd></dl></article>
+        <article><svg class="icon" aria-hidden="true"><use href="#patch"/></svg><h3 data-en="Continuous glucose monitor">连续葡萄糖监测仪</h3><dl><dt data-en="Sample">检测样本</dt><dd data-en="Interstitial fluid">组织间液</dd><dt data-en="Reading">读数方式</dt><dd data-en="Continual readings from a sensor under the skin">通过皮下传感器持续读取趋势</dd></dl></article>
+        <article class="focus-card"><svg class="icon" aria-hidden="true"><use href="#retainer"/></svg><h3 data-en="Glyvia oral wearable">Glyvia 口内佩戴式传感器</h3><dl><dt data-en="Sample">检测样本</dt><dd data-en="Saliva">唾液</dd><dt data-en="Reading">读数方式</dt><dd data-en="Time-series saliva sensing under development">研发中的唾液时序读数</dd></dl></article>
+      </div>
+      <a class="source-link comparison-source" href="https://www.nist.gov/how-do-you-measure-it/how-do-glucose-monitors-measure-sugar-levels-blood"><span data-en="NIST guide to glucose meters and CGMs">NIST 血糖仪与连续葡萄糖监测技术说明</span><svg class="icon" aria-hidden="true"><use href="#external"/></svg></a>
+    </section>
+
+    <section class="section validation-band" id="validation" aria-labelledby="validation-title">
+      <div class="wrap"><header class="section-intro" id="project-data"><h2 id="validation-title" data-en="From the lab to everyday life.">从实验台走向日常。</h2><p data-en="Glyvia is in research and development. Our next studies will assess reading consistency, wearability and the relationship between saliva and blood glucose.">Glyvia 目前处于研发阶段。我们将验证读数稳定性、口内佩戴体验，以及唾液与血液葡萄糖之间的关系。</p></header>
+        <ol class="roadmap">
+          <li><svg class="icon" aria-hidden="true"><use href="#flask"/></svg><div><h3 data-en="Bench testing">台架测试</h3><p data-en="Check calibration, response time and signal drift.">测量标定范围、响应时间和信号漂移。</p></div></li>
+          <li><svg class="icon" aria-hidden="true"><use href="#drop"/></svg><div><h3 data-en="Saliva and wear testing">唾液与佩戴测试</h3><p data-en="Track repeatability and usable readings, and assess how the appliance feels to wear.">记录重复性、有效读数率和佩戴体验。</p></div></li>
+          <li><svg class="icon" aria-hidden="true"><use href="#people"/></svg><div><h3 data-en="Paired clinical research">临床配对研究</h3><p data-en="Compare saliva and blood glucose readings in the same participants. A study is planned, subject to ethics approval.">计划在伦理批准后，对照同一参与者的唾液与血液读数。</p></div></li>
+        </ol>
+        <p class="partner-note" data-en="Potential clinical partner: Queen Mary Hospital, Hong Kong. Collaboration is pending confirmation.">临床合作意向机构：香港玛丽医院，合作状态待确认。</p>
+      </div>
+    </section>
+
+    <section class="section impact-band" id="impact" aria-labelledby="impact-title">
+      <div class="wrap impact">
+        <div class="story"><svg class="icon" aria-hidden="true"><use href="#heart"/></svg><p class="section-label" data-en="Our story · Creative interpretation">品牌故事 · 创作演绎</p><h2 id="impact-title" data-en="One less step between you and your day.">让一次检测，轻一点。</h2><p data-en="Getting ready, taking a sample, logging a reading. Repeated day after day, those small steps take up real time. Glyvia started with a simple question: could one drop of saliva take a step out of the routine?">准备、采样、记下结果。每天重复的小动作，也会占去生活里的时间。Glyvia 从一个简单的问题出发：从一滴唾液开始，能不能少做一步？</p></div>
+        <div class="impact-goals">
+          <h3 data-en="UN Sustainable Development Goals">联合国可持续发展目标</h3>
+          <a class="goal goal-3" href="https://sdgs.un.org/goals/goal3"><span class="goal-icon"><svg class="icon" aria-hidden="true"><use href="#heart"/></svg></span><div><h4 data-en="SDG 3 · Good Health and Well-being">SDG 3 · 良好健康与福祉</h4><p data-en="Make sampling easier to complete.">降低采样负担。</p></div></a>
+          <a class="goal goal-9" href="https://sdgs.un.org/goals/goal9"><span class="goal-icon"><svg class="icon" aria-hidden="true"><use href="#layers"/></svg></span><div><h4 data-en="SDG 9 · Industry, Innovation and Infrastructure">SDG 9 · 产业、创新和基础设施</h4><p data-en="Develop repeatable flexible sensors.">提高柔性传感器的批次重复性。</p></div></a>
+          <a class="goal goal-17" href="https://sdgs.un.org/goals/goal17"><span class="goal-icon"><svg class="icon" aria-hidden="true"><use href="#people"/></svg></span><div><h4 data-en="SDG 17 · Partnerships for the Goals">SDG 17 · 促进目标实现的伙伴关系</h4><p data-en="Develop research protocols with clinical teams.">与临床团队共同设计验证方案。</p></div></a>
+          <a class="source-link" href="https://sdgs.un.org/goals"><span data-en="Explore all 17 goals">查看联合国全部 17 项目标</span><svg class="icon" aria-hidden="true"><use href="#external"/></svg></a>
+        </div>
+      </div>
+    </section>
+  </main>
+  <footer class="site-footer"><div class="wrap footer-inner"><a href="#top" class="brand" aria-label="Glyvia，返回顶部" data-en-label="Glyvia, back to top"><span class="brand-mark"><svg class="icon" aria-hidden="true"><use href="#drop"/></svg></span><span><strong data-en="Glyvia">Glyvia</strong><small data-en="CONRAD CHALLENGE">SALIVA SENSING</small></span></a><p data-en="Conrad Challenge project · Research prototype. Not for blood glucose management.">Conrad Challenge 项目 · 研究原型，尚不可用于血糖管理。</p></div></footer>
+</body>
+</html>
