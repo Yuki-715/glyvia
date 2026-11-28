@@ -24,8 +24,8 @@
   renderer.toneMappingExposure = 1.08;
 
   var scene = new THREE.Scene();
-  var camera = new THREE.PerspectiveCamera(32, 1, 0.1, 40);
-  camera.position.set(0.35, 1.45, 9.4);
+  var camera = new THREE.PerspectiveCamera(32, 1, 0.1, 80);
+  var radius = 1;
 
   scene.add(new THREE.AmbientLight(0xfff6f8, 0.72));
   var hemi = new THREE.HemisphereLight(0xfff8f4, 0x501060, 0.45);
@@ -110,9 +110,36 @@
     addSphere(arm.to, arm.color, arm.radius || 0.24);
   });
 
+  /* Spin around the molecule's own center. The old camera sat above the model
+     and the short canvas cropped everything below the ring. */
+  var savedTilt = group.rotation.clone();
+  group.rotation.set(0, 0, 0);
+  group.updateMatrixWorld(true);
+  var sphere = new THREE.Box3().setFromObject(group).getBoundingSphere(new THREE.Sphere());
+  group.children.forEach(function (child) {
+    child.position.sub(sphere.center);
+  });
+  group.rotation.copy(savedTilt);
+  radius = sphere.radius || 1;
+
   var clock = new THREE.Clock();
   var running = false;
   var visible = true;
+
+  function fitCamera() {
+    var vFov = camera.fov * Math.PI / 180;
+    var hFov = 2 * Math.atan(Math.tan(vFov / 2) * (camera.aspect || 1));
+    var pad = 1.24;
+    var dist = Math.max(
+      (radius * pad) / Math.sin(vFov / 2),
+      (radius * pad) / Math.sin(hFov / 2)
+    );
+    camera.position.set(0, radius * 0.02, dist);
+    camera.lookAt(0, 0, 0);
+    camera.near = Math.max(0.05, dist - radius * 4);
+    camera.far = dist + radius * 6;
+    camera.updateProjectionMatrix();
+  }
 
   function resize() {
     var width = canvas.clientWidth || stage.clientWidth;
@@ -121,7 +148,7 @@
     renderer.setPixelRatio(Math.min(window.devicePixelRatio || 1, 1.75));
     renderer.setSize(width, height, false);
     camera.aspect = width / height;
-    camera.updateProjectionMatrix();
+    fitCamera();
   }
 
   function render() {
