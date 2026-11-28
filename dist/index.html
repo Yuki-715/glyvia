@@ -1,212 +1,386 @@
 <!doctype html>
-<html lang="zh-CN">
+<html lang="en">
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <script>if(new URLSearchParams(location.search).get("lang")==="en")document.documentElement.lang="en";</script>
-  <title data-en="Glyvia | Adjunctive glucose trend">Glyvia｜辅助性血糖趋势</title>
-  <meta name="description" content="Glyvia 用舌下唾液，提供健康管理用的辅助性血糖趋势信息。它不能替代指尖采血或持续葡萄糖监测，也不用于诊断或调整胰岛素。" data-en-content="Glyvia uses saliva from under the tongue to offer adjunctive blood-glucose trend information for health management. It is not a replacement for finger-stick testing or continuous glucose monitoring, and it is not for diagnosis or insulin dosing.">
-  <meta name="theme-color" content="#f6f1e8">
+  <script>if(new URLSearchParams(location.search).get("lang")==="zh")document.documentElement.lang="zh-CN";</script>
+  <title data-zh="Glyvia 糖序｜免扎针唾液葡萄糖监测">Glyvia | Needle-free saliva glucose monitoring</title>
+  <meta name="description" content="Glyvia is a student research concept for needle-free glucose monitoring through an in-mouth saliva sensor. Conrad Challenge 2026–2027." data-zh-content="Glyvia 糖序是一个学生研究项目：用口内唾液传感器做免扎针的葡萄糖监测。康莱德挑战赛 2026–2027。">
+  <meta name="theme-color" content="#0b0a12">
+  <meta property="og:title" content="Glyvia | Check More. Worry Less.">
+  <meta property="og:description" content="Needle-free glucose monitoring through intelligent saliva sensing. A Conrad Challenge 2026–2027 project.">
+  <meta property="og:image" content="https://glyvia.us/assets/oral-sensor.jpg">
+  <meta property="og:url" content="https://glyvia.us/">
   <link rel="icon" href="assets/favicon-32.png" type="image/png" sizes="32x32">
-  <link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
   <link rel="apple-touch-icon" href="assets/apple-touch-icon.png">
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@1,9..144,560;1,9..144,640&family=Noto+Sans+SC:wght@400;500;700&family=Outfit:wght@400;500;600;700&family=ZCOOL+XiaoWei&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="css/styles.css">
+  <link rel="stylesheet" href="style.css">
 </head>
 <body>
-  <svg class="symbols" aria-hidden="true" xmlns="http://www.w3.org/2000/svg">
-    <defs>
-      <linearGradient id="mark-grad" x1="8" y1="56" x2="56" y2="6" gradientUnits="userSpaceOnUse">
-        <stop stop-color="#501060"/><stop offset=".5" stop-color="#802070"/><stop offset="1" stop-color="#C04070"/>
-      </linearGradient>
-    </defs>
-    <symbol id="mark" viewBox="0 0 64 64">
-      <path d="M32 4 56 17.5V46.5L32 60 8 46.5V17.5Z" fill="none" stroke="url(#mark-grad)" stroke-width="3" stroke-linejoin="round"/>
-      <path d="M27 16c-4.2 6.6-9 11-9 17.2a9 9 0 0 0 18 0c0-6.2-4.8-10.6-9-17.2Z" fill="url(#mark-grad)"/>
-      <path d="M39 22.5h9.2M48.2 22.5l6 7.2M48.2 22.5 54 16" fill="none" stroke="#F0C0D0" stroke-width="1.7" stroke-linecap="round"/>
-      <circle cx="39" cy="22.5" r="2.8" fill="#802070"/>
-      <circle cx="48.2" cy="22.5" r="2.8" fill="#B03070"/>
-      <circle cx="54.2" cy="29.6" r="2.3" fill="#C04070"/>
-      <circle cx="54" cy="16" r="2.1" fill="#F0B0D0"/>
-    </symbol>
-  </svg>
-  <a class="skip" href="#main" data-en="Skip to content">跳到主要内容</a>
-  <header class="site-header">
-    <div class="wrap header-inner">
-      <a class="brand" href="#top" aria-label="Glyvia 首页" data-en-label="Glyvia home">
-        <img class="logo-mark" src="assets/logo-mark-web.png" alt="" width="42" height="42">
-        <span><strong>Glyvia</strong><small class="lang-zh">健康与营养</small><small class="lang-en">HEALTH &amp; NUTRITION</small></span>
-      </a>
-      <nav id="site-nav" class="nav-panel" aria-label="主导航" data-en-label="Main">
-        <a href="#top" data-en="Home">首页</a>
-        <a href="#why" data-en="Why it matters">为什么需要</a>
-        <a href="#who" data-en="Who it’s for">它适合谁</a>
-        <a href="#how" data-en="How it works">如何工作</a>
-        <a href="#next" data-en="What’s next">接下来</a>
-        <a href="#team" data-en="Team">团队</a>
-        <a href="#video" data-en="Video">视频</a>
-        <a href="#contact" data-en="Contact">联系我们</a>
-      </nav>
-      <div class="header-tools">
-        <div class="lang-switch" role="group" aria-label="语言" data-en-label="Language">
-          <button type="button" data-language="zh-CN" lang="zh-CN" aria-pressed="true">中文</button>
-          <button type="button" data-language="en" lang="en" aria-pressed="false">English</button>
-        </div>
-        <button type="button" class="menu-toggle" data-menu-toggle aria-controls="site-nav" aria-expanded="false" aria-label="打开导航" data-en-label="Open menu" hidden>
-          <svg class="open-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M4 7h16M4 12h16M4 17h16" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></svg>
-          <svg class="close-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M6 6l12 12M18 6 6 18" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></svg>
-        </button>
-      </div>
+<a class="skip" href="#main" data-zh="跳到主要内容">Skip to content</a>
+
+<header class="site-header">
+  <a class="brand" href="#top" aria-label="Glyvia home" data-zh-label="Glyvia 首页">
+    <img src="assets/mark.png" alt="" width="36" height="36">
+    <span>Glyvia</span>
+  </a>
+  <nav id="site-nav" class="nav" aria-label="Sections" data-zh-label="章节">
+    <a href="#problem" data-zh="问题">Problem</a>
+    <a href="#solution" data-zh="方案">Solution</a>
+    <a href="#validation" data-zh="验证">Validation</a>
+    <a href="#business" data-zh="商业模式">Business</a>
+    <a href="#roadmap" data-zh="路线图">Roadmap</a>
+    <a href="#team" data-zh="团队">Team</a>
+  </nav>
+  <div class="language" role="group" aria-label="Language" data-zh-label="语言" hidden>
+    <button type="button" data-language="en" aria-pressed="true">EN</button>
+    <button type="button" data-language="zh-CN" aria-pressed="false">中文</button>
+  </div>
+  <button class="menu-toggle" type="button" aria-controls="site-nav" aria-expanded="false" aria-label="Menu" data-zh-label="菜单" hidden>
+    <span></span><span></span>
+  </button>
+</header>
+
+<main id="main">
+<section id="top" class="hero">
+  <div class="hero-copy">
+    <p class="stage"><span class="dot"></span><span data-zh="学生研究项目 · 研究阶段">Student research concept · Research phase</span></p>
+    <h1><span data-zh="多测一点，">Check More.</span><br><span class="grad" data-zh="少忧一点。">Worry Less.</span></h1>
+    <p class="lead" data-zh="Glyvia 是一款构想中的柔性口内传感器：在口腔里采集唾液，读取葡萄糖信号，再把读数无线发送到手机。全程不用扎针。">Glyvia is a concept for a flexible in-mouth sensor that samples saliva, reads its glucose signal, and sends readings wirelessly to a phone. No needles involved.</p>
+    <div class="actions">
+      <a class="btn primary" href="#solution" data-zh="看看工作原理">See how it works</a>
+      <a class="btn ghost" href="#team" data-zh="认识团队">Meet the team</a>
     </div>
-  </header>
+  </div>
+  <figure class="hero-figure">
+    <img src="assets/oral-sensor.jpg" width="1320" height="990" alt="Concept render of a clear oral tray with a thin sensor chip on the palate side" data-zh-alt="概念渲染图：透明口内托盘，上颚一侧装有薄型传感芯片">
+    <figcaption data-zh="概念渲染图，并非实物样机">Concept render, not a working prototype</figcaption>
+  </figure>
+</section>
+<section id="problem" class="section" aria-labelledby="problem-title">
+  <p class="eyebrow">01 · <span data-zh="问题">The problem</span></p>
+  <h2 id="problem-title" data-zh="监测血糖，不该这么累。">Glucose monitoring should not be this hard to live with.</h2>
+  <div class="stats">
+    <div class="stat"><strong data-zh="5.89 亿">589M</strong><span data-zh="全球成人糖尿病患者（2024 年，20–79 岁）">adults with diabetes worldwide (2024, ages 20–79)</span></div>
+    <div class="stat"><strong data-zh="1.48 亿">148M</strong><span data-zh="其中在中国">of them in China</span></div>
+    <div class="stat"><strong data-zh="8.53 亿">853M</strong><span data-zh="预计 2050 年全球成人患者">projected worldwide by 2050</span></div>
+  </div>
+  <p class="source" data-zh="来源：国际糖尿病联盟（IDF）《糖尿病地图集》第 11 版，2025 年">Source: International Diabetes Federation, IDF Diabetes Atlas, 11th edition, 2025</p>
+  <div class="cards three">
+    <article class="card">
+      <h3 data-zh="反复采样">Repeated sampling</h3>
+      <p data-zh="指尖采血每次读数都要扎一针，日复一日，负担不断累积。">Every fingerstick reading needs a fresh prick, and the burden adds up over years of daily testing.</p>
+    </article>
+    <article class="card">
+      <h3 data-zh="皮肤佩戴不适">Discomfort from skin wear</h3>
+      <p data-zh="连续血糖监测（CGM）要把传感器细丝插在皮下，一戴就是十几天。">Continuous glucose monitors (CGMs) keep a filament under the skin for up to two weeks at a time.</p>
+    </article>
+    <article class="card">
+      <h3 data-zh="长期费用高">Ongoing cost</h3>
+      <p data-zh="监测要持续一辈子，耗材费用由家庭长期承担。">Monitoring is lifelong, and households keep paying for consumables month after month.</p>
+    </article>
+  </div>
+</section>
 
-  <main id="main">
-    <section class="hero-screen" id="top" aria-labelledby="hero-title">
-      <p class="eyebrow"><span class="lang-zh">健康与营养</span><span class="lang-en">Health &amp; Nutrition</span></p>
-      <h1 id="hero-title" class="hero-title">
-        <span class="lang-zh title-line">用<span class="display-kw">舌下</span>唾液，</span>
-        <span class="lang-en title-line">A way to watch <span class="display-kw">glucose</span> changes</span>
-        <span class="molecule-slot" data-molecule>
-          <img class="molecule-still" src="assets/glucose-still.jpg" width="1024" height="1024" alt="风格化的葡萄糖分子，紫红色玻璃球体" data-en-alt="Stylized glucose molecule in plum glass">
-          <canvas aria-hidden="true" width="840" height="840"></canvas>
-          <span class="mini-cap"><span class="lang-zh">风格化葡萄糖</span><span class="lang-en">Stylized glucose</span></span>
-        </span>
-        <span class="lang-zh title-line">多一种观察<span class="display-kw">血糖</span>变化的方式</span>
-        <span class="lang-en title-line title-rest">using saliva from under the <span class="display-kw">tongue</span></span>
-      </h1>
-      <div class="hero-actions">
-        <a class="btn btn-primary" href="#how" data-en="See how it works">看看它如何工作</a>
-        <a class="btn btn-ghost" href="#contact" data-en="We’d love to hear from you">欢迎联系我们</a>
-      </div>
-    </section>
+<section id="alternatives" class="section" aria-labelledby="alt-title">
+  <p class="eyebrow">02 · <span data-zh="现有方式">Existing alternatives</span></p>
+  <h2 id="alt-title" data-zh="现有方式各有取舍。">Each current option makes a trade-off.</h2>
+  <div class="table-wrap">
+    <table class="compare">
+      <thead>
+        <tr>
+          <th scope="col"><span class="sr-only" data-zh="比较项">Feature</span></th>
+          <th scope="col" data-zh="指尖采血">Fingerstick</th>
+          <th scope="col">CGM</th>
+          <th scope="col" data-zh="实验室唾液检测">Lab saliva tests</th>
+          <th scope="col" class="ours">Glyvia <small data-zh="（目标）">(target)</small></th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr><th scope="row" data-zh="样本">Sample</th><td data-zh="毛细血管血">Capillary blood</td><td data-zh="组织间液">Interstitial fluid</td><td data-zh="唾液">Saliva</td><td class="ours" data-zh="唾液">Saliva</td></tr>
+        <tr><th scope="row" data-zh="是否扎针">Needle-free</th><td class="no" data-zh="否">No</td><td class="no" data-zh="否，皮下传感器">No, under-skin sensor</td><td class="yes" data-zh="是">Yes</td><td class="ours yes" data-zh="是">Yes</td></tr>
+        <tr><th scope="row" data-zh="读数方式">Readings</th><td data-zh="单次读数">Single readings</td><td data-zh="连续估算">Continuous estimates</td><td data-zh="外部采样后检测">External sampling</td><td class="ours" data-zh="口内重复读数">Repeated in-mouth readings</td></tr>
+        <tr><th scope="row" data-zh="居家使用">At home</th><td class="yes" data-zh="可以">Yes</td><td class="yes" data-zh="可以">Yes</td><td class="no" data-zh="需送检">No, lab-based</td><td class="ours yes" data-zh="可以">Yes</td></tr>
+        <tr><th scope="row" data-zh="月费用">Monthly cost</th><td data-zh="试纸和采血针">Strips and lancets</td><td data-zh="例：Stelo（美国）$89/月，2 个传感器，每个最长 15 天">e.g. Stelo (US): $89/month, 2 sensors up to 15 days each</td><td data-zh="按次计费">Per test</td><td class="ours" data-zh="拟定 $19.90/月">Proposed $19.90/month</td></tr>
+      </tbody>
+    </table>
+  </div>
+  <p class="source" data-zh="Stelo 价格为 Dexcom 美国官网月订阅价，与中国市场价格不能直接比较。Glyvia 一列均为设计目标或拟定价格，尚未验证。">Stelo price is Dexcom's US monthly subscription price and is not directly comparable to the Chinese market. All Glyvia figures are design targets or proposed prices and have not been validated.</p>
+</section>
+<section id="solution" class="section" aria-labelledby="solution-title">
+  <p class="eyebrow">03 · <span data-zh="我们的方案">Our solution</span></p>
+  <h2 id="solution-title" data-zh="一枚柔性口内传感器，无线读取唾液。">A flexible oral sensor with wireless saliva readings.</h2>
+  <ol class="steps">
+    <li class="step">
+      <svg viewBox="0 0 48 48" aria-hidden="true"><path d="M4 24c6-8 12-11 16-9 2 1 3 1 4 0 1 1 2 1 4 0 4-2 10 1 16 9-6 9-13 13-20 13S10 33 4 24Z"/><path d="M10 24c9 3 19 3 28 0"/></svg>
+      <h3 data-zh="口内采样">In-mouth sampling</h3>
+      <p data-zh="传感面装在薄型口内托盘上，直接接触唾液。">The sensing surface sits on a thin oral tray and touches saliva directly.</p>
+    </li>
+    <li class="step">
+      <svg viewBox="0 0 48 48" aria-hidden="true"><rect x="11" y="11" width="26" height="26" rx="5"/><rect x="18" y="18" width="12" height="12" rx="3"/><path d="M18 5v6M24 5v6M30 5v6M18 37v6M24 37v6M30 37v6M5 18h6M5 24h6M5 30h6M37 18h6M37 24h6M37 30h6"/></svg>
+      <h3 data-zh="葡萄糖传感">Glucose sensing</h3>
+      <p data-zh="功能化传感层把葡萄糖相关的反应转换成电信号。">A functionalized sensing layer turns glucose-related reactions into an electrical signal.</p>
+    </li>
+    <li class="step">
+      <svg viewBox="0 0 48 48" aria-hidden="true"><rect x="14" y="4" width="20" height="40" rx="5"/><path d="M22 38h4"/><path d="M18 24h4l2-5 3 10 2-5h1"/></svg>
+      <h3 data-zh="手机读数">Mobile readings</h3>
+      <p data-zh="读数无线上传到手机，记录时间和读数质量。">Readings upload wirelessly to a phone with a timestamp and a quality flag.</p>
+    </li>
+  </ol>
 
-    <section class="band" aria-labelledby="safety-title">
-      <div class="wrap center prose">
-        <p data-en="Glyvia is a non-invasive glucose-monitoring product. A small sensor under the tongue reads the saliva you naturally produce. Then, with models tailored to the person and to the moment — such as before or after a meal — it shows blood-glucose trends on your phone or in a mini-program. It is for people who want to keep an eye on their own glucose changes, or those of someone they care for. The person who uses it and the person who buys it need not be the same.">Glyvia 是一款无须扎针的血糖监测产品。把一枚小小的传感器放在舌下，读取日常分泌的唾液，再结合针对个人和当下状态的模型，在手机或小程序里显示血糖变化的趋势。它适合关心自己或家人血糖变化的人。使用的人和购买的人，可以不是同一位。</p>
-        <h2 id="safety-title"><span class="lang-zh">它能做什么，不能做什么。</span><span class="lang-en">What it can do — and what it cannot.</span></h2>
-        <p data-en="Detecting glucose in saliva is not the same as estimating blood glucose from saliva. Glyvia offers adjunctive trend information for health management. It is not a replacement for finger-stick testing or continuous glucose monitoring (CGM), and it is not for diagnosis or insulin dosing.">检测到唾液里的葡萄糖，并不等于用唾液估计血糖。Glyvia 提供的是健康管理用的辅助趋势信息。它不能替代指尖采血或持续葡萄糖监测（CGM），也不用于诊断或调整胰岛素。</p>
-      </div>
-    </section>
-
-    <section class="band band-blush" id="why" aria-labelledby="why-title">
-      <div class="wrap section-head center">
-        <p class="kicker">02 — <span data-en="Why it matters">为什么需要它</span></p>
-        <h2 id="why-title" data-en="Why it matters">为什么需要它</h2>
-        <p class="lede" data-en="Many people need to check how their glucose is changing, again and again. Finger-sticks add up, and not everyone can wear a continuous monitor for the long term. A more comfortable, everyday way to watch those changes would help.">许多人需要反复了解血糖的变化。每次扎手指都有负担，持续监测仪也不是人人都能长期使用。大家希望多一种更轻松、可以日常佩戴的观察方式。</p>
-        <p class="lede" data-en="The International Diabetes Federation estimates that in 2024 about 589 million adults aged 20–79 were living with diabetes worldwide.">据国际糖尿病联盟估计，2024 年全球约有 5.89 亿名 20–79 岁成人患有糖尿病。</p>
-      </div>
-      <div class="wrap" style="max-width:720px">
-        <article class="stat center">
-          <strong>5.89 <small data-en="million">亿</small></strong>
-          <span class="label" data-en="Adults aged 20–79, worldwide, 2024">20–79 岁成人，全球，2024 年</span>
-          <span class="source" data-en="Source: IDF Diabetes Atlas, 11th edition. This is public data, not Glyvia product data.">来源：IDF《糖尿病地图集》第 11 版。以上为公开数据，不是 Glyvia 的产品数据。</span>
-        </article>
-      </div>
-      <figure class="figure motion-plate">
-        <div class="motion-frame">
-          <img src="assets/droplets.jpg" width="1280" height="720" alt="象牙色丝绸上的三滴紫红色玻璃液滴" data-en-alt="Three plum glass droplets on ivory silk">
-        </div>
-        <figcaption data-en="Stylized droplets.">风格化的液滴。</figcaption>
-      </figure>
-    </section>
-
-    <section class="band" id="who" aria-labelledby="who-title">
-      <div class="wrap section-head center">
-        <p class="kicker">03 — <span data-en="Who it’s for">它适合谁</span></p>
-        <h2 id="who-title" data-en="Who it’s for">它适合谁</h2>
-      </div>
-      <div class="wrap center prose">
-        <p data-en="Glyvia is for people who want another look at how glucose is changing, and for family members or caregivers who may be watching along with them. The person who uses it and the person who buys it need not be the same.">Glyvia 给想多看一眼血糖变化的人，也给可能一起查看的家人或照料者。使用的人和买下来的人，可以不是同一位。</p>
-        <p data-en="Finger-stick testing and continuous glucose monitoring remain part of everyday care. Glyvia does not replace them. It sits alongside them, as another way to see change.">指尖采血和持续葡萄糖监测，仍然是人们日常使用的方法。Glyvia 不能替代它们，而是在旁边多提供一种观察变化的方式。</p>
-        <p data-en="The sensor sits under the tongue and reads saliva you already produce. We don’t try to make you salivate more, because that kind of sample is a poorer match for everyday conditions. It is meant to be comfortable enough to wear day to day, and it gives you a personalized view of the trend.">传感器放在舌下，读取的是日常分泌的唾液。不会特意催你多分泌口水，因为那样得到的样本，反而不如平时自然分泌的更贴近真实情况。它戴着更舒服，适合日常使用，并在手机里给你看针对个人的趋势。</p>
-      </div>
-    </section>
-
-    <section class="band band-blush" id="how" aria-labelledby="how-title">
-      <div class="wrap section-head center">
-        <p class="kicker">04 — <span data-en="How it works">如何工作</span></p>
-        <h2 id="how-title" data-en="From under the tongue to your phone.">从舌下到手机，这样工作。</h2>
-      </div>
-      <div class="wrap split">
-        <ol class="steps">
-          <li><span class="num">01</span><div><h3 class="material-kw" data-en="Place it under the tongue">放在舌下</h3><p data-en="The sensor sits gently under the tongue and reads the saliva you naturally produce.">把传感器轻轻放在舌下，读取日常分泌的唾液。</p></div></li>
-          <li><span class="num">02</span><div><h3 class="material-kw" data-en="What it measures first is glucose in saliva">先测唾液里的葡萄糖</h3><p data-en="The sensor detects glucose in saliva, not blood itself.">传感器检测的是唾液中的葡萄糖，不是血液本身。</p></div></li>
-          <li><span class="num">03</span><div><h3 class="material-kw" data-en="Then a model made for you">再结合针对你的模型</h3><p data-en="Using information about the person, and about states such as before or after a meal, it estimates blood glucose and how it is changing.">根据个人情况，以及餐前、餐后等不同状态，估计血糖及其变化。</p></div></li>
-          <li><span class="num">04</span><div><h3 class="material-kw" data-en="See the trend on your phone">在手机里看趋势</h3><p data-en="Open the phone app or mini-program to see the direction of change, as a reference for health management.">在手机或小程序中查看变化方向，作为健康管理的参考。</p></div></li>
-        </ol>
-        <figure class="figure" style="margin:0">
-          <img src="assets/oral-sensor.jpg" width="1320" height="990" alt="放在口内的小型传感器示意" data-en-alt="A small sensor meant to be worn in the mouth">
-          <figcaption data-en="A sensor that sits under the tongue.">放在舌下的传感器示意。</figcaption>
-        </figure>
-      </div>
-    </section>
-
-    <section class="band" id="next" aria-labelledby="next-title">
-      <div class="wrap section-head center">
-        <p class="kicker">05 — <span data-en="What’s next">接下来</span></p>
-        <h2 id="next-title" data-en="What’s next">接下来</h2>
-        <p class="lede" data-en="We are making the device easier to use, and continuing to refine the personalized trend model. You’re welcome to follow along as we go.">我们正在把设备做得更好用，并继续完善针对个人的趋势模型。欢迎关注后续进展。</p>
-      </div>
-    </section>
-
-    <section class="band band-blush" id="team" aria-labelledby="team-title">
-      <div class="wrap placeholder center">
-        <p class="kicker">06 — <span data-en="Team">团队</span></p>
-        <h2 id="team-title" data-en="Team">团队</h2>
-        <p class="lede" data-en="Introduction coming soon.">团队介绍即将发布。</p>
-      </div>
-    </section>
-
-    <section class="band" id="video" aria-labelledby="video-title">
-      <div class="wrap placeholder center">
-        <p class="kicker">07 — <span data-en="Video">视频</span></p>
-        <h2 id="video-title" data-en="Innovation video">创新视频</h2>
-        <p class="lede" data-en="The film is coming soon.">创新视频即将上线。</p>
-      </div>
-    </section>
-
-    <section class="band band-blush" id="contact" aria-labelledby="contact-title">
-      <div class="wrap form-card">
-        <div class="center">
-          <p class="kicker">08 — <span data-en="Contact">联系我们</span></p>
-          <h2 id="contact-title" data-en="We’d love to hear from you.">欢迎联系我们。</h2>
-          <p class="lede" data-en="If you would like to learn more about Glyvia, or have a question about purchasing, please get in touch. Please do not include personal health information in your message — for example glucose readings, a diagnosis, or medication details. This form does not send or store messages.">若你想了解 Glyvia，或有购买方面的问题，欢迎来信。请不要在留言里填写个人健康信息，例如血糖读数、诊断或用药情况。此表单不会发送或保存留言。</p>
-        </div>
-        <form class="form-grid" data-contact-form action="#" method="post">
-          <label><span data-en="What should we call you? Optional.">怎么称呼（可不填）</span><input name="name" type="text" autocomplete="name" maxlength="80"></label>
-          <label><span data-en="What is this about?">想了解的方面</span>
-            <select name="topic">
-              <option data-en="A general question">一般问题</option>
-              <option data-en="A purchase question">购买咨询</option>
-              <option data-en="Something else">其他</option>
-            </select>
-          </label>
-          <label><span data-en="Message">留言</span><textarea name="message" required maxlength="800" placeholder="写下你想说的。" data-en-placeholder="Write a message."></textarea></label>
-          <button class="btn btn-primary" type="submit" data-en="Send">提交</button>
-          <p class="form-status" data-form-status role="status"></p>
-        </form>
-      </div>
-    </section>
-  </main>
-
-  <footer class="site-footer">
-    <div class="wrap">
-      <div class="footer-lockup">
-        <img class="logo-lockup" src="assets/logo-lockup-web.png" alt="Glyvia">
-        <span class="lang-zh">健康与营养</span>
-        <span class="lang-en">Health &amp; Nutrition</span>
-      </div>
-      <p class="center" data-en="Detecting glucose in saliva is not the same as estimating blood glucose from saliva. Glyvia offers adjunctive trend information for health management. It is not a replacement for finger-stick testing or continuous glucose monitoring (CGM), and it is not for diagnosis or insulin dosing.">检测到唾液里的葡萄糖，并不等于用唾液估计血糖。Glyvia 提供健康管理用的辅助趋势信息，不能替代指尖采血或持续葡萄糖监测（CGM），也不用于诊断或调整胰岛素。</p>
-      <div class="footer-meta">
-        <span data-en="Updated 2026-11-25 (Asia/Shanghai)">更新 2026-11-25（Asia/Shanghai）</span>
-        <a href="#top" data-en="Back to top">回到顶部</a>
-      </div>
+  <div class="split">
+    <figure class="figure-card">
+      <img src="assets/sensor-layers.jpg" width="1160" height="870" loading="lazy" alt="Exploded concept view of three thin flexible layers: an encapsulation layer on top, a layer with gold electrode traces, and a flexible base" data-zh-alt="分层概念图：顶部封装层、中间带金色电极走线的传感层、底部柔性基底">
+      <figcaption data-zh="传感器分层概念图：封装层、电极与功能化传感层、柔性基底">Concept view of the sensor layers: encapsulation, electrodes with a functionalized sensing layer, and a flexible base</figcaption>
+    </figure>
+    <div>
+      <h3 class="sub" data-zh="设计目标">Design targets</h3>
+      <dl class="targets">
+        <div><dt>≤ 90 s</dt><dd data-zh="得到首次唾液读数">to the first saliva reading</dd></div>
+        <div><dt>18 / min</dt><dd data-zh="数据上传频率">data uploads</dd></div>
+        <div><dt>&lt; 0.5 mm</dt><dd data-zh="传感器核心厚度">sensor core thickness</dd></div>
+      </dl>
+      <h3 class="sub" data-zh="关键指标目标">Key metric targets</h3>
+      <dl class="targets">
+        <div><dt>0.1 µM</dt><dd data-zh="检测限（缓冲液中）">detection limit in buffer</dd></div>
+        <div><dt>≥ 95%</dt><dd data-zh="规定佩戴时段内的有效读数比例">valid readings in defined wear sessions</dd></div>
+        <div><dt>$2</dt><dd data-zh="每用户每周的耗材与配送成本上限">recurring delivery cost cap per user per week</dd></div>
+      </dl>
+      <p class="note" data-zh="以上都是设计目标，尚未经过测试。“有效读数比例”衡量数据是否完整，不代表准确率。">All figures above are design targets and have not been tested. "Valid readings" measures data completeness, not accuracy.</p>
+      <p class="ref"><span data-zh="技术参考：">Technical reference: </span><a href="https://patents.justia.com/patent/20260272335" rel="noopener" target="_blank">US 2026/0272335 A1</a><span data-zh="，《可定制的可穿戴唾液生物传感器，用于实时连续健康监测》，2026 年 9 月 17 日公开。">, "Customized Wearable Saliva Biosensor for Real-Time Continuous Health Monitoring", published 17 Sep 2026.</span></p>
     </div>
-  </footer>
-  <script src="js/vendor/three.min.js"></script>
-  <script src="js/molecule.js"></script>
-  <script src="js/site.js"></script>
+  </div>
+</section>
+<section id="validation" class="section" aria-labelledby="validation-title">
+  <p class="eyebrow">04 · <span data-zh="如何验证">How we will validate it</span></p>
+  <h2 id="validation-title" data-zh="唾液读数要和血糖对得上，这是最需要证明的一点。">The hardest thing to prove: saliva readings must track blood glucose.</h2>
+  <ol class="phases">
+    <li>
+      <span class="phase-n">1</span>
+      <h3 data-zh="台架测试">Bench testing</h3>
+      <p data-zh="在缓冲液和人工唾液中测量检测限、灵敏度、响应时间、选择性和信号漂移。">Measure detection limit, sensitivity, response time, selectivity and signal drift in buffer and artificial saliva.</p>
+    </li>
+    <li>
+      <span class="phase-n">2</span>
+      <h3 data-zh="唾液与佩戴测试">Saliva and wear testing</h3>
+      <p data-zh="记录重复性、有效读数比例，以及 pH、进食和唾液流速对读数的影响，并评估佩戴舒适度。">Record repeatability, valid-reading rate, and the effects of pH, food and saliva flow; assess wear comfort.</p>
+    </li>
+    <li>
+      <span class="phase-n">3</span>
+      <h3 data-zh="临床配对研究">Paired clinical study</h3>
+      <p data-zh="经伦理批准后，在同一参与者身上同时采集唾液读数和血糖读数，用配对数据做个体校准。">After ethics approval, collect saliva and blood readings from the same participants and use the paired data for individual calibration.</p>
+    </li>
+  </ol>
+  <div class="metrics">
+    <h3 class="sub" data-zh="我们会用这些指标评判结果">Metrics we will report</h3>
+    <ul class="chips">
+      <li data-zh="检测限 LOD">Limit of detection (LOD)</li>
+      <li data-zh="灵敏度">Sensitivity</li>
+      <li data-zh="响应时间">Response time</li>
+      <li data-zh="选择性">Selectivity</li>
+      <li data-zh="重复性">Repeatability</li>
+      <li data-zh="唾液–血糖相关性">Saliva–blood correlation</li>
+      <li data-zh="平均绝对相对误差 MARD">Mean absolute relative difference (MARD)</li>
+      <li data-zh="Clarke 误差网格">Clarke error grid</li>
+    </ul>
+  </div>
+</section>
+
+<section id="advantage" class="section" aria-labelledby="advantage-title">
+  <p class="eyebrow">05 · <span data-zh="差异化">Where we aim to differentiate</span></p>
+  <h2 id="advantage-title" data-zh="可能的优势，以及每一项还需要证明什么。">Possible advantages, and what each one still needs to prove.</h2>
+  <div class="cards five">
+    <article class="card">
+      <h3 data-zh="免扎针，可重复读数">Needle-free, repeated readings</h3>
+      <p data-zh="一次佩戴可以读取多次，不需要每次采样。">One wear session yields many readings without a new sample each time.</p>
+      <p class="prove" data-zh="待证明：佩戴时段内信号稳定、读数有效。">To prove: stable signal and valid readings across a wear session.</p>
+    </article>
+    <article class="card">
+      <h3 data-zh="传感器功能化">Sensor functionalization</h3>
+      <p data-zh="针对唾液中的低浓度葡萄糖优化传感层。">A sensing layer tuned for the low glucose levels found in saliva.</p>
+      <p class="prove" data-zh="待证明：在真实唾液中达到目标检测限和选择性。">To prove: target detection limit and selectivity in real saliva.</p>
+    </article>
+    <article class="card">
+      <h3 data-zh="柔性口内集成">Flexible oral integration</h3>
+      <p data-zh="核心厚度低于 0.5 mm 的柔性传感器，装在口内托盘上。">A sensor core under 0.5 mm thick, mounted on an oral tray.</p>
+      <p class="prove" data-zh="待证明：材料生物相容性和佩戴舒适度。">To prove: material biocompatibility and wear comfort.</p>
+    </article>
+    <article class="card">
+      <h3 data-zh="稳定量产">Consistent manufacturing</h3>
+      <p data-zh="批次之间性能一致，才能把成本控制在目标以内。">Batch-to-batch consistency keeps cost within target.</p>
+      <p class="prove" data-zh="待证明：批次重复性和单位成本。">To prove: batch repeatability and unit cost.</p>
+    </article>
+    <article class="card">
+      <h3 data-zh="配对数据与个体校准">Paired data, tailored calibration</h3>
+      <p data-zh="用每位用户的唾液和血糖配对数据建立个人校准模型。">Each user's paired saliva and blood data builds a personal calibration model.</p>
+      <p class="prove" data-zh="待证明：校准后的准确性（MARD）。">To prove: accuracy after calibration (MARD).</p>
+    </article>
+  </div>
+</section>
+<section id="market" class="section" aria-labelledby="market-title">
+  <p class="eyebrow">06 · <span data-zh="客户与市场进入">Customers and go-to-market</span></p>
+  <h2 id="market-title" data-zh="先从中国大陆的 2 型糖尿病家庭开始。">Starting with type 2 diabetes households in mainland China.</h2>
+  <div class="cards three">
+    <article class="card">
+      <h3 data-zh="目标客户">Customers</h3>
+      <ul class="list">
+        <li data-zh="2 型糖尿病成人">Adults with type 2 diabetes</li>
+        <li data-zh="对采样或佩戴有负担的人">People burdened by sampling or skin wear</li>
+        <li data-zh="中国大陆首发">Mainland China first</li>
+        <li data-zh="家庭付费">Households pay</li>
+      </ul>
+    </article>
+    <article class="card">
+      <h3 data-zh="早期用户">Early adopters</h3>
+      <ul class="list">
+        <li data-zh="计划：5 家医疗机构 + 100 名成人参与试点">Planned pilot: 5 providers + 100 adults</li>
+        <li data-zh="以研究方案和伦理批准为准">Subject to study protocol and ethics approval</li>
+        <li data-zh="早期销售：有强烈监测需求的家庭">Early sales: motivated households</li>
+      </ul>
+    </article>
+    <article class="card">
+      <h3 data-zh="渠道（完成验证并获批后）">Channels (after validation and authorization)</h3>
+      <ul class="list">
+        <li data-zh="医疗机构演示、上手培训和转介">Provider demos, onboarding and referrals</li>
+        <li data-zh="送货上门和传感器售后">Home delivery and sensor support</li>
+        <li data-zh="商业化第一年目标：20 家医疗机构">Commercial year 1 target: 20 providers</li>
+      </ul>
+    </article>
+  </div>
+</section>
+
+<section id="business" class="section" aria-labelledby="business-title">
+  <p class="eyebrow">07 · <span data-zh="商业模式">Business model</span></p>
+  <h2 id="business-title" data-zh="读取器一次性购买，传感器按月订阅。">A one-time reader plus a monthly sensor plan.</h2>
+  <div class="money">
+    <div class="price"><strong>$49</strong><span data-zh="读取器 · 拟定价格">per reader · proposed</span></div>
+    <div class="price"><strong>$19.90</strong><span data-zh="月度套餐 · 拟定价格，含传感器和基础服务">monthly plan · proposed, sensors + basic service</span></div>
+    <div class="price"><strong>$336.8K</strong><span data-zh="首年收入情景">first-year revenue scenario</span></div>
+  </div>
+  <div class="split even">
+    <div class="calc">
+      <h3 class="sub" data-zh="首年收入情景怎么算">How the first-year scenario adds up</h3>
+      <table class="math">
+        <tbody>
+          <tr><th scope="row" data-zh="读取器：2,000 户 × $49">Readers: 2,000 homes × $49</th><td>$98.0K</td></tr>
+          <tr><th scope="row" data-zh="订阅：2,000 户 × 平均 6 个付费月 × $19.90">Plans: 2,000 homes × 6 paid months avg × $19.90</th><td>$238.8K</td></tr>
+          <tr class="total"><th scope="row" data-zh="合计">Total</th><td>$336.8K</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <div class="calc">
+      <h3 class="sub" data-zh="规模化后的单位经济（目标）">Unit economics at scale (targets)</h3>
+      <table class="math">
+        <tbody>
+          <tr><th scope="row" data-zh="月度套餐：$19.90 − 耗材成本 $8.67">Monthly plan: $19.90 − $8.67 recurring cost</th><td data-zh="$11.23 · 56%">$11.23 · 56%</td></tr>
+          <tr><th scope="row" data-zh="读取器：$49 − 制造成本 $20">Reader: $49 − $20 manufacturing</th><td data-zh="$29 · 59%">$29 · 59%</td></tr>
+        </tbody>
+      </table>
+      <p class="note" data-zh="$8.67/月 = $2/周 × 52 周 ÷ 12。以上毛利不含临床、注册和获客费用。">$8.67/month = $2/week × 52 weeks ÷ 12. Margins exclude clinical, regulatory and customer acquisition costs.</p>
+    </div>
+  </div>
+</section>
+<section id="roadmap" class="section" aria-labelledby="roadmap-title">
+  <p class="eyebrow">08 · <span data-zh="路线图">Roadmap</span></p>
+  <h2 id="roadmap-title" data-zh="我们现在处于研究阶段。">We are in the research phase.</h2>
+  <ol class="milestones">
+    <li class="now"><span data-zh="研究与方案设计">Research and design</span><small data-zh="当前阶段">Now</small></li>
+    <li><span data-zh="原型与台架测试">Prototype and bench testing</span></li>
+    <li><span data-zh="临床试点：5 家机构、100 名成人">Clinical pilot: 5 providers, 100 adults</span></li>
+    <li><span data-zh="监管审批">Regulatory authorization</span></li>
+    <li><span data-zh="商业化：首年 20 家机构">Launch: 20 providers in year 1</span></li>
+  </ol>
+
+  <h3 class="sub" data-zh="研究计划：2026 年 11 月 16 日 – 2027 年 1 月 10 日（8 周）">Research plan: 16 Nov 2026 – 10 Jan 2027 (8 weeks)</h3>
+  <div class="gantt-wrap">
+    <div class="gantt" data-start="2026-11-16" data-weeks="8">
+      <div class="g-head"></div>
+      <div class="g-week">W1<small>11/16</small></div><div class="g-week">W2<small>11/23</small></div>
+      <div class="g-week">W3<small>11/30</small></div><div class="g-week">W4<small>12/7</small></div>
+      <div class="g-week">W5<small>12/14</small></div><div class="g-week">W6<small>12/21</small></div>
+      <div class="g-week">W7<small>12/28</small></div><div class="g-week">W8<small>1/4</small></div>
+
+      <div class="g-task" data-zh="文献检索与证据整理">Literature review and evidence</div>
+      <div class="g-bar" style="grid-column: 2 / 4"></div>
+      <div class="g-task" data-zh="传感原理与口腔可行性分析">Sensing principles and oral feasibility</div>
+      <div class="g-bar alt" style="grid-column: 2 / 5"></div>
+      <div class="g-task" data-zh="统计分析与验证方案设计">Statistics and validation design</div>
+      <div class="g-bar" style="grid-column: 3 / 6"></div>
+      <div class="g-task" data-zh="原型资料核对与技术讨论">Prototype data review and technical discussion</div>
+      <div class="g-bar alt" style="grid-column: 4 / 7"></div>
+      <div class="g-task" data-zh="用户需求、成本及竞品研究">User needs, cost and competitor research</div>
+      <div class="g-bar" style="grid-column: 3 / 7"></div>
+      <div class="g-task" data-zh="技术风险与可行性评估">Technical risk and feasibility assessment</div>
+      <div class="g-bar alt" style="grid-column: 6 / 8"></div>
+      <div class="g-task" data-zh="项目方案撰写与修改">Proposal writing and revision</div>
+      <div class="g-bar" style="grid-column: 6 / 9"></div>
+      <div class="g-task" data-zh="成果汇报与后续计划">Final presentation and next steps</div>
+      <div class="g-bar alt" style="grid-column: 8 / 10"></div>
+
+      <div class="g-today" hidden><span data-zh="今天">Today</span></div>
+    </div>
+  </div>
+  <p class="source" data-zh="计划时间安排，实际进度可能根据研究情况调整。">Planned schedule; actual progress may change as the research develops.</p>
+</section>
+<section id="team" class="section" aria-labelledby="team-title">
+  <p class="eyebrow">09 · <span data-zh="团队">Team</span></p>
+  <h2 id="team-title" data-zh="五名成都高中生，五个研究方向。">Five high school students in Chengdu, five research areas.</h2>
+  <div class="team">
+    <article class="member">
+      <span class="avatar" aria-hidden="true">A</span>
+      <h3 data-zh="贺思瑗">He Siyuan</h3>
+      <p class="meta" data-zh="成都金苹果锦城第一中学 · 11 年级">Chengdu Golden Apple Jincheng No. 1 Secondary School · Grade 11</p>
+      <p class="role" data-zh="生物统计与计算研究">Biostatistics &amp; Computational Research</p>
+      <p data-zh="唾液葡萄糖与血糖的相关性、传感器性能指标、校准方法与验证研究设计。">Saliva–blood glucose correlation, sensor performance metrics, calibration methods and validation study design.</p>
+    </article>
+    <article class="member">
+      <span class="avatar" aria-hidden="true">B</span>
+      <h3 data-zh="张涛栎（Toby）">Toby Zhang</h3>
+      <p class="meta" data-zh="成都金苹果锦城第一中学 · 9 年级">Chengdu Golden Apple Jincheng No. 1 Secondary School · Grade 9</p>
+      <p class="role" data-zh="生物传感与生物化学">Biosensor &amp; Biochemistry</p>
+      <p data-zh="酶法与非酶法葡萄糖传感、电极与柔性基底材料、适合口内佩戴的技术路线。">Enzymatic vs. non-enzymatic sensing, electrode and flexible substrate materials, routes suited to oral wear.</p>
+    </article>
+    <article class="member">
+      <span class="avatar" aria-hidden="true">C</span>
+      <h3 data-zh="李映宸">Li Yingchen</h3>
+      <p class="meta" data-zh="成都贝赛思双语学校 · 9 年级">BASIS Bilingual School Chengdu · Grade 9</p>
+      <p class="role" data-zh="生物学可行性">Biological Feasibility</p>
+      <p data-zh="唾液成分，pH、进食和流速对读数的影响，采样方式，以及口腔材料的生物相容性。">Saliva composition, effects of pH, food and flow rate, sampling methods, and biocompatibility of oral materials.</p>
+    </article>
+    <article class="member">
+      <span class="avatar" aria-hidden="true">D</span>
+      <h3 data-zh="何欣宜">He Xinyi</h3>
+      <p class="meta" data-zh="成都七中国际部 · 10 年级">Chengdu No.7 High School International Dept. · Grade 10</p>
+      <p class="role" data-zh="现有技术与创新性">Existing Technologies &amp; Innovation</p>
+      <p data-zh="已发表的唾液葡萄糖设备、口腔佩戴式与柔性传感技术、相关专利，以及 Glyvia 的创新点哪些还需证明。">Published saliva glucose devices, oral and flexible sensing, related patents, and which Glyvia claims still need proof.</p>
+    </article>
+    <article class="member">
+      <span class="avatar" aria-hidden="true">E</span>
+      <h3 data-zh="陈星宇">Chen Xingyu</h3>
+      <p class="meta" data-zh="成都七中国际部 · 10 年级">Chengdu No.7 High School International Dept. · Grade 10</p>
+      <p class="role" data-zh="商业与市场研究">Business &amp; Market Research</p>
+      <p data-zh="市场规模与目标用户、竞品价格、付费意愿、商业模式，以及成本目标是否合理。">Market size and target users, competitor pricing, willingness to pay, business model, and whether cost targets hold up.</p>
+    </article>
+  </div>
+</section>
+
+<section id="impact" class="section slim" aria-labelledby="impact-title">
+  <p class="eyebrow">10 · <span data-zh="联合国可持续发展目标">UN Sustainable Development Goals</span></p>
+  <h2 id="impact-title" class="sr-only" data-zh="联合国可持续发展目标">UN Sustainable Development Goals</h2>
+  <div class="sdgs">
+    <div><strong>SDG 3</strong><span data-zh="良好健康与福祉：降低日常监测的负担">Good health and well-being: lower the burden of daily monitoring</span></div>
+    <div><strong>SDG 9</strong><span data-zh="产业、创新和基础设施：提高柔性传感器的批次一致性">Industry, innovation and infrastructure: consistent flexible sensor manufacturing</span></div>
+    <div><strong>SDG 17</strong><span data-zh="促进目标实现的伙伴关系：与临床团队共同设计验证方案">Partnerships for the goals: design validation with clinical teams</span></div>
+  </div>
+</section>
+</main>
+<footer class="site-footer">
+  <div class="foot-brand">
+    <img src="assets/mark.png" alt="" width="28" height="28">
+    <span>Glyvia <span data-zh="糖序">· Check More. Worry Less.</span></span>
+  </div>
+  <p data-zh="Glyvia 是康莱德挑战赛（Conrad Challenge）2026–2027 学生研究项目，不是医疗器械，不能用于诊断或治疗决策。标注“目标”或“拟定”的数字均未经验证。图片为概念渲染图。">Glyvia is a student research project for the Conrad Challenge 2026–2027. It is not a medical device and must not be used for diagnosis or treatment decisions. Figures marked "target" or "proposed" are unvalidated. Images are concept renders.</p>
+  <p class="copy">© 2026 Glyvia · glyvia.us</p>
+</footer>
+<script src="site.js" defer></script>
 </body>
 </html>
